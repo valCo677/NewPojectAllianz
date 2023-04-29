@@ -11,13 +11,14 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Allianz  {
-    private WebDriver driver;
+public class  Allianz extends TestObject {
+    /*private WebDriver driver;
     @BeforeSuite
 
     protected final void setupTestSuite() {
         WebDriverManager.chromedriver ().setup ();
         WebDriverManager.edgedriver ().setup ();
+        WebDriverManager.firefoxdriver ().setup ();
     }
 
     @BeforeMethod
@@ -33,10 +34,11 @@ public class Allianz  {
         if (this.driver != null) {
             this.driver.quit ();
         }
-    }
+    }*/
 
     @Test
     public void AllianzOptions(){
+        WebDriver driver = super.getDriver ();
         driver.get ( "https://www.allianz.bg/bg_BG/individuals/car-and-vehicles.html" );
         driver.findElement ( By.xpath ( "//*[@id=\"onetrust-accept-btn-handler\"]" ) ).click ();
         driver.findElement ( By.xpath ( "/html/body/div[1]/div/div[1]/div/div/div/header/div[2]/div/div/div[1]/div[1]/div/ul/li[1]/div[1]/a/span" ) ).click ();
